@@ -10,6 +10,7 @@ class GlassMorphicContainer extends StatelessWidget {
   final Border? border;
   final Widget? child;
   final ImageFilter imageFilter;
+  final BorderRadius? borderRadiusBorder;
 
   const GlassMorphicContainer({
     super.key,
@@ -20,6 +21,7 @@ class GlassMorphicContainer extends StatelessWidget {
     this.border,
     this.child,
     required this.imageFilter,
+    this.borderRadiusBorder,
   });
 
   @override
@@ -33,7 +35,8 @@ class GlassMorphicContainer extends StatelessWidget {
           height: height,
           decoration: BoxDecoration(
             color: Colors.white.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(borderRadius),
+            borderRadius:
+                borderRadiusBorder ?? BorderRadius.circular(borderRadius),
             border: border,
           ),
           child: child,

@@ -20,12 +20,12 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         children: [
           const BackgroundImage(),
-          Positioned.fill(
-            left: 0,
-            right: 0,
-            top: 0,
-            child: Image.asset("assets/images/image.png", fit: BoxFit.cover),
-          ),
+          // Positioned.fill(
+          //   left: 0,
+          //   right: 0,
+          //   top: 0,
+          //   child: Image.asset("assets/images/image.png", fit: BoxFit.cover),
+          // ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 30),
             child: GlassMorphicContainer(

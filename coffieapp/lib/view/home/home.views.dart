@@ -10,10 +10,13 @@ import 'package:coffieapp/view/common/bottom_nav.dart';
 import 'package:coffieapp/view/common/glass_morphic_container.common.dart';
 import 'package:coffieapp/view/common/rating_widget.common.dart';
 import 'package:coffieapp/view/common/search_bar.common.dart';
+import 'package:coffieapp/view/home/components/header.home.dart';
 import 'package:coffieapp/view/home/components/item_card.home.dart';
 import 'package:coffieapp/view/home/components/normal.home.dart';
 import 'package:coffieapp/view/home/components/popular.home.dart';
 import 'package:coffieapp/view/home/components/welcome_widget.home.dart';
+import 'package:coffieapp/view/product/components/switch_.product.dart';
+import 'package:coffieapp/view/product/product.view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -52,7 +55,7 @@ class _HomePageState extends State<HomePage> {
               child: ListView(
                 shrinkWrap: true,
                 children: [
-                  headerWidget(),
+                  const HeaderWidget(),
                   const PopularSection(),
                   GetX<BeverageController>(
                     builder: (controller) {
@@ -101,18 +104,26 @@ class _HomePageState extends State<HomePage> {
                                 horizontal: 20,
                                 vertical: 14,
                               ),
-                              child: GlassMorphicContainer(
-                                imageFilter:
-                                    ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                                height: 180,
-                                borderRadius: 14,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 20, bottom: 20, left: 24, right: 14),
-                                  child: NormalSection(
-                                    beverage:
-                                        controller.beverageData[index - 1],
-                                    cartController: cartController,
+                              child: GestureDetector(
+                                onTap: () => Get.to(ProductPage(
+                                  controller.beverageData[index - 1],
+                                )),
+                                child: GlassMorphicContainer(
+                                  imageFilter:
+                                      ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                                  height: 180,
+                                  borderRadius: 14,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 20,
+                                        bottom: 20,
+                                        left: 24,
+                                        right: 14),
+                                    child: NormalSection(
+                                      beverage:
+                                          controller.beverageData[index - 1],
+                                      cartController: cartController,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -165,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                     icon: controller.cartController.cart.isEmpty
                         ? const Icon(CupertinoIcons.cart)
                         : const Icon(CupertinoIcons.cart_badge_plus),
-                    activeIcon: Icon(CupertinoIcons.cart_fill),
+                    activeIcon: const Icon(CupertinoIcons.cart_fill),
                   ),
                   const BottomNavigationBarItem(
                     label: "notification",
@@ -180,34 +191,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  headerWidget() => SafeArea(
-        child: GetX<UserDataController>(builder: (controller) {
-          print(controller.userData.value.date);
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              children: [
-                WelcomeWidget(
-                  date: controller.userData.value.date,
-                  username: controller.userData.value.username,
-                ),
-                const SizedBox(height: 35),
-                UiSearchBar(
-                  borderRadius: BorderRadius.circular(8),
-                  hintColor: const Color(0xFFBBBBBC),
-                  color: const Color(0xFFBBBBBC),
-                  hintText: "Search favorite Beverages",
-                  suffixIcon: IconButton(
-                    icon: const Icon(Icons.tune, color: Color(0xFFBBBBBC)),
-                    onPressed: () => print("Pressed filter"),
-                  ),
-                  prefixIcon:
-                      const Icon(Icons.search, color: Color(0xFFBBBBBC)),
-                ),
-              ],
-            ),
-          );
-        }),
-      );
 }

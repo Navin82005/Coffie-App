@@ -10,10 +10,8 @@ class PopularController extends GetxController {
       isVeg: false,
       oneLiner: "",
       rating: "",
-      id: 0,
     ),
     Beverage(
-      id: 0,
       name: "",
       description: "",
       imagePath: "",
@@ -30,7 +28,6 @@ class PopularController extends GetxController {
     await Future.delayed(const Duration(seconds: 2));
     popularData.value = [
       Beverage(
-        id: 1,
         name: "Hot Cappuccino",
         description: "",
         oneLiner: "Espresso, Steamed Milk",
@@ -39,7 +36,6 @@ class PopularController extends GetxController {
         isVeg: true,
       ),
       Beverage(
-        id: 2,
         name: "Hot Cappuccino",
         description: "",
         oneLiner: "Espresso, Steamed Milk",
@@ -48,7 +44,6 @@ class PopularController extends GetxController {
         isVeg: true,
       ),
       Beverage(
-        id: 3,
         name: "Hot Cappuccino",
         description: "",
         oneLiner: "Espresso, Steamed Milk",

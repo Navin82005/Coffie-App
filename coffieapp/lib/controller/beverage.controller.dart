@@ -11,10 +11,8 @@ class BeverageController extends GetxController {
       imagePath: "",
       rating: "",
       isVeg: true,
-      id: 0,
     ),
     Beverage(
-      id: 0,
       name: "",
       oneLiner: "",
       description: "",
@@ -23,7 +21,6 @@ class BeverageController extends GetxController {
       isVeg: true,
     ),
     Beverage(
-      id: 0,
       name: "",
       oneLiner: "",
       description: "",
@@ -38,7 +35,6 @@ class BeverageController extends GetxController {
     await Future.delayed(const Duration(seconds: 2));
     beverageData.value = [
       Beverage(
-        id: 1,
         name: "Lattè",
         description:
             "Caffè latte is a milk coffee that is a made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.",
@@ -48,7 +44,6 @@ class BeverageController extends GetxController {
         isVeg: true,
       ),
       Beverage(
-        id: 2,
         name: "Flat White",
         description:
             "Caffè latte is a milk coffee that is a made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.",
@@ -58,7 +53,6 @@ class BeverageController extends GetxController {
         isVeg: true,
       ),
       Beverage(
-        id: 3,
         name: "Hot Cappuccino",
         description: "",
         oneLiner: "Espresso, Steamed Milk",
@@ -67,7 +61,6 @@ class BeverageController extends GetxController {
         isVeg: true,
       ),
       Beverage(
-        id: 4,
         name: "Hot Cappuccino",
         description: "",
         oneLiner: "Espresso, Steamed Milk",
@@ -76,7 +69,6 @@ class BeverageController extends GetxController {
         isVeg: true,
       ),
       Beverage(
-        id: 5,
         name: "Hot Cappuccino",
         description: "",
         oneLiner: "Espresso, Steamed Milk",
@@ -86,5 +78,56 @@ class BeverageController extends GetxController {
       ),
     ];
     isLoading.value = false;
+  }
+
+  void updateBeverageData(String id, ChoiceOfCupFilling cup) {
+    int index = beverageData.indexWhere((b) => b.id == id);
+    if (index != -1) {
+      beverageData[index].choiceOfCupFilling = cup;
+      update();
+    }
+  }
+
+  void updateBeverageDataMilk(String id, ChoiceOfMilk milk) {
+    int index = beverageData.indexWhere((b) => b.id == id);
+    if (index != -1) {
+      beverageData[index].choiceOfMilk = milk;
+      update();
+    }
+  }
+
+  void updateBeverageDataSugar(String id, ChoiceOfSugar sugar) {
+    int index = beverageData.indexWhere((b) => b.id == id);
+    if (index != -1) {
+      beverageData[index].choiceOfSugar = sugar;
+      update();
+    }
+  }
+}
+
+class BeverageFillingController extends GetxController {
+  var currentCup = ChoiceOfCupFilling.full.obs;
+
+  updateCurrentCup(ChoiceOfCupFilling cup, Beverage beverage) {
+    currentCup.value = cup;
+    Get.find<BeverageController>().updateBeverageData(beverage.id, cup);
+  }
+}
+
+class BeverageMilkController extends GetxController {
+  var selectedMilk = ChoiceOfMilk.fullCreamMilk.obs;
+
+  updateCurrentCup(ChoiceOfMilk milk, Beverage beverage) {
+    selectedMilk.value = milk;
+    Get.find<BeverageController>().updateBeverageDataMilk(beverage.id, milk);
+  }
+}
+
+class BeverageSugarController extends GetxController {
+  var selectedSugar = ChoiceOfSugar.once.obs;
+
+  updateCurrentCup(ChoiceOfSugar sugar, Beverage beverage) {
+    selectedSugar.value = sugar;
+    Get.find<BeverageController>().updateBeverageDataSugar(beverage.id, sugar);
   }
 }

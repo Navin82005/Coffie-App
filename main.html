@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -74,6 +74,37 @@
             </div>
         </div>
     </section>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="search"></div>
+        <audio id="backgroundMusic" autoplay loop muted>
+            <source
+                src="C:/Users/Naveen/Downloads/Vettaiyan_Manasilaayo_Lyric_Rajinikanth_T.J._Gnanavel_A_AiD6SOOBKZI_140.mp3"
+                type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+
+        <script>
+            // Wait until the DOM is fully loaded
+            document.addEventListener('DOMContentLoaded', function () {
+                var backgroundMusic = document.getElementById('backgroundMusic');
+                backgroundMusic.muted = false;
+            });
+        </script>
+
 </body>
 
 </html>

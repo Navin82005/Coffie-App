@@ -10,8 +10,8 @@ class SplashScreen extends StatelessWidget {
     return AnimatedSplashScreen(
       splash: "assets/icons/splash_screen.gif",
       splashIconSize: 500,
-      animationDuration: const Duration(milliseconds: 1500),
-      backgroundColor: Colors.brown.shade200,
+      // animationDuration: const Duration(milliseconds: 1500),
+      backgroundColor: Colors.brown.shade100,
       nextScreen: LoginPage(),
     );
   }
