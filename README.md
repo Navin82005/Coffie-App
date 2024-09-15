@@ -66,30 +66,30 @@ To run this application, you will need to have Flutter installed on your local m
 
 ## Main Components 📱
 ### 1. Beverage Model
-      The Beverage model holds information about each beverage, such as name, description, image path, rating, etc.
+   The Beverage model holds information about each beverage, such as name, description, image path, rating, etc.
 
 ### 2. Beverage Controller
-      The BeverageController manages the list of beverages and their selected customizations using GetX for reactive state management.
+   The BeverageController manages the list of beverages and their selected customizations using GetX for reactive state management.
 
 ### 3. Customization Widgets
-      ChoiceOfFilling: Allows users to select how they want their cup filled.
-      ChoiceOfMilkSection: Provides users with the option to select the type of milk (e.g., soy milk, skim milk).
-      RatingWidget: Displays the rating of each beverage.
+   ChoiceOfFilling: Allows users to select how they want their cup filled.
+   ChoiceOfMilkSection: Provides users with the option to select the type of milk (e.g., soy milk, skim milk).
+   RatingWidget: Displays the rating of each beverage.
 
 Example Screenshots 📸
 
 
 
 ## Contributing 🤝
-   Feel free to contribute to this project by submitting issues, pull requests, or suggesting new features. We welcome all kinds of contributions to improve the app!
+Feel free to contribute to this project by submitting issues, pull requests, or suggesting new features. We welcome all kinds of contributions to improve the app!
 
 ## License 📝
-   This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments 🙌
-   Flutter for providing an amazing framework.
-   GetX for simplifying state management.
-   Flutter Advanced Switch for the custom switches.
+Flutter for providing an amazing framework.
+GetX for simplifying state management.
+Flutter Advanced Switch for the custom switches.
 
 ## Contact
 If you have any questions or suggestions, feel free to reach out to me at navin82005@gmail.com
