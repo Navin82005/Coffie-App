@@ -45,23 +45,23 @@ To run this application, you will need to have Flutter installed on your local m
 ## Project Structure 🏗️
 
    ```bach
-   lib/
-   │
-   ├── controller/
-   │   └── beverage.controller.dart     # Handles the state management for beverages
-   │
-   ├── model/
-   │   └── beverages.model.dart         # Beverage model defining coffee attributes
-   │
-   ├── view/
-   │   ├── product/
-   │   │   ├── choice_of_filling.product.dart   # Widget to handle cup filling choices
-   │   │   └── choice_of_milk.product.dart      # Widget for choosing milk type
-   │   │
-   │   └── common/
-   │       └── rating_widget.common.dart  # Common widget for displaying ratings
-   │
-   ├── main.dart                         # Main entry point of the app
+      lib/
+      │
+      ├── controller/
+      │   └── beverage.controller.dart     # Handles the state management for beverages
+      │
+      ├── model/
+      │   └── beverages.model.dart         # Beverage model defining coffee attributes
+      │
+      ├── view/
+      │   ├── product/
+      │   │   ├── choice_of_filling.product.dart   # Widget to handle cup filling choices
+      │   │   └── choice_of_milk.product.dart      # Widget for choosing milk type
+      │   │
+      │   └── common/
+      │       └── rating_widget.common.dart  # Common widget for displaying ratings
+      │
+      ├── main.dart                         # Main entry point of the app
    ```
 
 ## Main Components 📱
@@ -77,7 +77,7 @@ To run this application, you will need to have Flutter installed on your local m
    RatingWidget: Displays the rating of each beverage.
 
 Example Screenshots 📸
-
+<img src="https://github.com/Navin82005/Coffie-App/blob/main/output/home.png" />
 
 
 ## Contributing 🤝
