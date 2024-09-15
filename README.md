@@ -26,4 +26,3 @@ To run this application, you will need to have Flutter installed on your local m
 
    ```bash
    git clone https://github.com/yourusername/coffieapp.git
-  ```
