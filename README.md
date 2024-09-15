@@ -76,14 +76,16 @@ To run this application, you will need to have Flutter installed on your local m
    ChoiceOfMilkSection: Provides users with the option to select the type of milk (e.g., soy milk, skim milk).
    RatingWidget: Displays the rating of each beverage.
 
+
 ### Example Screenshots 📸
+
 <div>
    <img src="https://github.com/Navin82005/Coffie-App/blob/main/output/login.png" />
    <img src="https://github.com/Navin82005/Coffie-App/blob/main/output/home.png" />
    <img src="https://github.com/Navin82005/Coffie-App/blob/main/output/product.png" />
 </div>
 
-###
+##
 
 ## Contributing 🤝
 Feel free to contribute to this project by submitting issues, pull requests, or suggesting new features. We welcome all kinds of contributions to improve the app!
