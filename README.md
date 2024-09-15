@@ -10,6 +10,8 @@ A sleek and user-friendly Flutter-based application for selecting and customizin
 - **Advanced Widgets**: Includes advanced switches and custom components for an intuitive user interface.
 - **Rating System**: View beverage ratings with a custom `RatingWidget`.
 
+`Note: Only some part of the features are described in here.`
+
 ## Getting Started 🚀
 
 To run this application, you will need to have Flutter installed on your local machine. Follow the steps below:
@@ -45,23 +47,23 @@ To run this application, you will need to have Flutter installed on your local m
 ## Project Structure 🏗️
 
    ```bach
-   lib/
-   │
-   ├── controller/
-   │   └── beverage.controller.dart     # Handles the state management for beverages
-   │
-   ├── model/
-   │   └── beverages.model.dart         # Beverage model defining coffee attributes
-   │
-   ├── view/
-   │   ├── product/
-   │   │   ├── choice_of_filling.product.dart   # Widget to handle cup filling choices
-   │   │   └── choice_of_milk.product.dart      # Widget for choosing milk type
-   │   │
-   │   └── common/
-   │       └── rating_widget.common.dart  # Common widget for displaying ratings
-   │
-   ├── main.dart                         # Main entry point of the app
+      lib/
+      │
+      ├── controller/
+      │   └── beverage.controller.dart     # Handles the state management for beverages
+      │
+      ├── model/
+      │   └── beverages.model.dart         # Beverage model defining coffee attributes
+      │
+      ├── view/
+      │   ├── product/
+      │   │   ├── choice_of_filling.product.dart   # Widget to handle cup filling choices
+      │   │   └── choice_of_milk.product.dart      # Widget for choosing milk type
+      │   │
+      │   └── common/
+      │       └── rating_widget.common.dart  # Common widget for displaying ratings
+      │
+      ├── main.dart                         # Main entry point of the app
    ```
 
 ## Main Components 📱
@@ -76,9 +78,13 @@ To run this application, you will need to have Flutter installed on your local m
    ChoiceOfMilkSection: Provides users with the option to select the type of milk (e.g., soy milk, skim milk).
    RatingWidget: Displays the rating of each beverage.
 
-Example Screenshots 📸
+### Example Screenshots 📸
 
-
+<div>
+   <img src="https://github.com/Navin82005/Coffie-App/blob/main/output/login.png" />
+   <img src="https://github.com/Navin82005/Coffie-App/blob/main/output/home.png" />
+   <img src="https://github.com/Navin82005/Coffie-App/blob/main/output/product.png" />
+</div>
 
 ## Contributing 🤝
 Feel free to contribute to this project by submitting issues, pull requests, or suggesting new features. We welcome all kinds of contributions to improve the app!
@@ -87,9 +93,9 @@ Feel free to contribute to this project by submitting issues, pull requests, or 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments 🙌
-Flutter for providing an amazing framework.
-GetX for simplifying state management.
-Flutter Advanced Switch for the custom switches.
+ - Flutter for providing an amazing framework.
+ - GetX for simplifying state management.
+ - Flutter Advanced Switch for the custom switches.
 
 ## Contact
 If you have any questions or suggestions, feel free to reach out to me at navin82005@gmail.com
