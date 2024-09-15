@@ -76,7 +76,6 @@ To run this application, you will need to have Flutter installed on your local m
    ChoiceOfMilkSection: Provides users with the option to select the type of milk (e.g., soy milk, skim milk).
    RatingWidget: Displays the rating of each beverage.
 
-
 ### Example Screenshots 📸
 
 <div>
@@ -94,9 +93,9 @@ Feel free to contribute to this project by submitting issues, pull requests, or 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments 🙌
-Flutter for providing an amazing framework.
-GetX for simplifying state management.
-Flutter Advanced Switch for the custom switches.
+ - Flutter for providing an amazing framework.
+ - GetX for simplifying state management.
+ - Flutter Advanced Switch for the custom switches.
 
 ## Contact
 If you have any questions or suggestions, feel free to reach out to me at navin82005@gmail.com
