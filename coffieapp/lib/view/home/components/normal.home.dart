@@ -3,7 +3,6 @@ import 'package:coffieapp/model/beverages.model.dart';
 import 'package:coffieapp/view/common/rating_widget.common.dart';
 import 'package:coffieapp/view/home/components/item_card.home.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class NormalSection extends StatelessWidget {
   final Beverage beverage;

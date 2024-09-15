@@ -1,9 +1,4 @@
-import 'package:coffieapp/model/beverages.model.dart';
-import 'package:coffieapp/model/userdata.model.dart';
 import 'package:coffieapp/view/home/home.views.dart';
-import 'package:coffieapp/view/login/login.view.dart';
-import 'package:coffieapp/view/product/product.view.dart';
-import 'package:coffieapp/view/splash/splash_screen.dart';
 // import 'package:coffieapp/view/unknown/unknown_page.unknown.view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

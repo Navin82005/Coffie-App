@@ -4,7 +4,6 @@ import 'package:coffieapp/view/product/components/choice_of_filling.product.dart
 import 'package:coffieapp/view/product/components/choice_of_milk.product.dart';
 import 'package:coffieapp/view/product/components/choice_of_sugar.product.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_switch/flutter_advanced_switch.dart';
 
 class RenderProductContents extends StatelessWidget {
   final Beverage beverage;

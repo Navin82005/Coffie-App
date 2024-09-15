@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:coffieapp/model/beverages.model.dart';
-import 'package:coffieapp/view/common/glass_morphic_container.common.dart';
 import 'package:coffieapp/view/home/components/header.home.dart';
 import 'package:coffieapp/view/product/components/product_contents.product.dart';
 import 'package:flutter/material.dart';

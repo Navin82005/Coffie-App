@@ -29,25 +29,25 @@ class GlowingText extends StatelessWidget {
           // Inner glow shadow
           Shadow(
             blurRadius: 10,
-            color: neonColor!,
-            offset: Offset(0, 0),
+            color: neonColor,
+            offset: const Offset(0, 0),
           ),
           // Outer glow shadow
           Shadow(
             blurRadius: 20,
-            color: neonColor!.withOpacity(0.5),
-            offset: Offset(0, 0),
+            color: neonColor.withOpacity(0.5),
+            offset: const Offset(0, 0),
           ),
           // Additional shadows for more intense glow
           Shadow(
             blurRadius: 30,
-            color: neonColor!.withOpacity(0.3),
-            offset: Offset(0, 0),
+            color: neonColor.withOpacity(0.3),
+            offset: const Offset(0, 0),
           ),
           Shadow(
             blurRadius: 40,
-            color: neonColor!.withOpacity(0.1),
-            offset: Offset(0, 0),
+            color: neonColor.withOpacity(0.1),
+            offset: const Offset(0, 0),
           ),
         ],
       ),

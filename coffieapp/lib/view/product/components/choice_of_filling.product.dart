@@ -9,7 +9,7 @@ class ChoiceOfFilling extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var fillingChoice = Get.put(BeverageFillingController());
+    Get.put(BeverageFillingController());
     // var tmp = Get.put(BeverageController());
     // tmp.fetchBeverageData();
     return GetX<BeverageFillingController>(builder: (controller) {

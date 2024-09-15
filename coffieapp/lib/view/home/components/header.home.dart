@@ -37,6 +37,5 @@ class HeaderWidget extends StatelessWidget {
         );
       }),
     );
-    ;
   }
 }
