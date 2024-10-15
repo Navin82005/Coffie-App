@@ -1,6 +1,10 @@
+import 'dart:ui';
+
 import 'package:coffieapp/model/beverages.model.dart';
+import 'package:coffieapp/view/common/glass_morphic_container.common.dart';
 import 'package:coffieapp/view/home/components/header.home.dart';
 import 'package:coffieapp/view/product/components/product_contents.product.dart';
+import 'package:coffieapp/view/product/components/submit.product.dart';
 import 'package:flutter/material.dart';
 
 class ProductPage extends StatelessWidget {
@@ -20,12 +24,8 @@ class ProductPage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Column(
-            children: [
-              Expanded(child: RenderProductContents(beverage)),
-            ],
-          ),
-          const HeaderWidget(),
+          RenderProductContents(beverage),
+          // const HeaderWidget(),
         ],
       ),
     );

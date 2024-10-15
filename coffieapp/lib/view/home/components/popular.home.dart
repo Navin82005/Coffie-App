@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:coffieapp/controller/popular.contoller.dart';
+import 'package:coffieapp/core/conf/app_config.dart';
+import 'package:coffieapp/view/common/adder.dart';
 import 'package:coffieapp/view/common/glass_morphic_container.common.dart';
 import 'package:coffieapp/view/common/rating_widget.common.dart';
 import 'package:flutter/material.dart';
@@ -33,9 +35,12 @@ class _PopularSectionState extends State<PopularSection> {
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: GetX<PopularController>(builder: (controller) {
           return ListView.builder(
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             scrollDirection: Axis.horizontal,
             shrinkWrap: true,
             itemCount: controller.popularData.length,
+
+            //
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -88,13 +93,9 @@ class _PopularSectionState extends State<PopularSection> {
   }
 
   renderContent(controller, index) => [
-        Text(
-          controller.popularData[index].name,
-          style: const TextStyle(
-            fontFamily: "Inter",
-            fontSize: 18,
-            color: Color(0xFFCDCDCD),
-          ),
+        AppTypography.Heading1(
+          text: controller.popularData[index].name,
+          fontWeight: FontWeight.w500,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,13 +104,9 @@ class _PopularSectionState extends State<PopularSection> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 6),
-                Text(
-                  controller.popularData[index].oneLiner,
-                  style: const TextStyle(
-                    fontFamily: "Inter",
-                    fontSize: 10,
-                    color: Color(0xFF303030),
-                  ),
+                AppTypography.body2(
+                  text: controller.popularData[index].name,
+                  fontWeight: FontWeight.w500,
                 ),
                 const SizedBox(height: 6),
                 RatingWidget(
@@ -119,22 +116,7 @@ class _PopularSectionState extends State<PopularSection> {
                 ),
               ],
             ),
-            Container(
-              height: 30,
-              width: 30,
-              decoration: BoxDecoration(
-                color: const Color(0xFF66A35C),
-                borderRadius: BorderRadius.circular(2),
-              ),
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.add,
-                  size: 16,
-                  color: Colors.white,
-                ),
-              ),
-            )
+            const Adder(),
           ],
         )
       ];

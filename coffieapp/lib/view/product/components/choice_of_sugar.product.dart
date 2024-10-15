@@ -48,7 +48,7 @@ class _ChoiceOfSugarSectionState extends State<ChoiceOfSugarSection> {
       crossAxisCount: 2,
       shrinkWrap: true,
       childAspectRatio: 4 / 1,
-      physics: const NeverScrollableScrollPhysics(),
+      // physics: const NeverScrollableScrollPhysics(),
       children:
           // const ChoiceSwitch(text: "Skim Milk"),
           ((ChoiceOfSugar.values).map((sugar) => ChoiceSwitch(

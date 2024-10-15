@@ -48,13 +48,15 @@ class _ChoiceOfMilkSectionState extends State<ChoiceOfMilkSection> {
       crossAxisCount: 2,
       shrinkWrap: true,
       childAspectRatio: 4 / 1,
-      physics: const NeverScrollableScrollPhysics(),
+      // physics: const NeverScrollableScrollPhysics(),
       children:
           // const ChoiceSwitch(text: "Skim Milk"),
-          ((ChoiceOfMilk.values).map((milk) => ChoiceSwitch(
-                text: convertEnumToString(milk),
-                controller: Get.find<BeverageController>(),
-              ))).toList(),
+          ((ChoiceOfMilk.values).map(
+        (milk) => ChoiceSwitch(
+          text: convertEnumToString(milk),
+          controller: Get.find<BeverageController>(),
+        ),
+      )).toList(),
     );
   }
 }

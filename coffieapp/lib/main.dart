@@ -1,3 +1,4 @@
+import 'package:coffieapp/core/meta/app_data.dart';
 import 'package:coffieapp/view/home/home.views.dart';
 // import 'package:coffieapp/view/unknown/unknown_page.unknown.view.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Swift Café',
+      title: AppData.AppName,
       // initialRoute: "/home",
       getPages: [
         // GetPage(name: "/", page: () => LoginPage()),

@@ -17,38 +17,52 @@ class CoffeeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
+      height: height + 20,
       width: width,
-      height: height,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        image: DecorationImage(
-          image: AssetImage(beverage.imagePath),
-          fit: BoxFit.cover,
-        ),
-      ),
       child: Stack(
-        alignment: Alignment.bottomCenter,
+        alignment: Alignment.center,
         children: [
-          Positioned(
-            bottom: 2,
-            child: TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.green,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
+          Container(
+            width: width,
+            height: height - 10,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              image: DecorationImage(
+                image: AssetImage(beverage.imagePath),
+                fit: BoxFit.cover,
               ),
-              onPressed: () {
-                print(cartController.cart.toString());
-                cartController.addToCart(beverage);
-              },
-              child: const Text(
-                "ADD",
-                style: TextStyle(
-                  fontFamily: "Inter",
-                  fontSize: 12,
-                  color: Colors.white,
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: SizedBox(
+                height: 30,
+                // width: 50,
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.all(0),
+                    backgroundColor: Colors.green,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                  onPressed: () {
+                    cartController.addToCart(beverage);
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    child: Text(
+                      "ADD",
+                      style: TextStyle(
+                        fontFamily: "Inter",
+                        fontSize: 12,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),

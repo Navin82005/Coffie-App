@@ -1,4 +1,8 @@
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:coffieapp/controller/beverage.controller.dart';
 import 'package:coffieapp/controller/cart.controller.dart';
 import 'package:coffieapp/controller/nav.controller.dart';
@@ -9,9 +13,7 @@ import 'package:coffieapp/view/home/components/header.home.dart';
 import 'package:coffieapp/view/home/components/normal.home.dart';
 import 'package:coffieapp/view/home/components/popular.home.dart';
 import 'package:coffieapp/view/product/product.view.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:coffieapp/nav_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,151 +37,113 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar:
-      body: Stack(
-        children: [
-          const BackgroundImage(),
-          Positioned.fill(
-            child: GlassMorphicContainer(
-              imageFilter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
-              borderRadius: 0,
-              child: ListView(
-                shrinkWrap: true,
-                children: [
-                  const HeaderWidget(),
-                  const PopularSection(),
-                  GetX<BeverageController>(
-                    builder: (controller) {
-                      return ListView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        itemCount: controller.beverageData.length,
-                        itemBuilder: (context, index) {
-                          if (controller.isLoading.value) {
-                            return Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 20,
-                                vertical: 14,
-                              ),
-                              child: GlassMorphicContainer(
-                                imageFilter:
-                                    ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                                height: 160,
-                                borderRadius: 14,
-                                child: const Center(
-                                  child: CircularProgressIndicator(
-                                    color: Colors.blueAccent,
-                                  ),
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Stack(
+          children: [
+            const BackgroundImage(),
+            Positioned.fill(
+              child: GlassMorphicContainer(
+                imageFilter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
+                borderRadius: 0,
+                child: ListView(
+                  keyboardDismissBehavior:
+                      ScrollViewKeyboardDismissBehavior.onDrag,
+                  shrinkWrap: true,
+                  children: [
+                    const HeaderWidget(),
+                    const PopularSection(),
+                    GetX<BeverageController>(
+                      builder: (controller) {
+                        return ListView.builder(
+                          keyboardDismissBehavior:
+                              ScrollViewKeyboardDismissBehavior.onDrag,
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: controller.beverageData.length,
+                          itemBuilder: (context, index) {
+                            if (controller.isLoading.value) {
+                              return Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 14,
                                 ),
-                              ),
-                            );
-                          }
-                          if (index == 0) {
-                            return const Align(
-                              alignment: Alignment.topLeft,
-                              child: Padding(
-                                padding: EdgeInsets.only(top: 20, left: 20),
-                                child: Text(
-                                  "Get it instantly",
-                                  style: TextStyle(
-                                    color: Color(0xFFB6B6B6),
-                                    fontFamily: "Inter",
-                                    fontSize: 18,
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
-                            return Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 20,
-                                vertical: 14,
-                              ),
-                              child: GestureDetector(
-                                onTap: () => Get.to(ProductPage(
-                                  controller.beverageData[index - 1],
-                                )),
                                 child: GlassMorphicContainer(
                                   imageFilter:
                                       ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                                  height: 180,
+                                  height: 160,
                                   borderRadius: 14,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 20,
-                                        bottom: 20,
-                                        left: 24,
-                                        right: 14),
-                                    child: NormalSection(
-                                      beverage:
-                                          controller.beverageData[index - 1],
-                                      cartController: cartController,
+                                  child: const Center(
+                                    child: CircularProgressIndicator(
+                                      color: Colors.blueAccent,
                                     ),
                                   ),
                                 ),
-                              ),
-                            );
-                          }
-                        },
-                      );
-                    },
-                  ),
-                  const SizedBox(height: 50)
-                ],
+                              );
+                            }
+                            if (index == 0) {
+                              return const Align(
+                                alignment: Alignment.topLeft,
+                                child: Padding(
+                                  padding: EdgeInsets.only(top: 20, left: 20),
+                                  child: Text(
+                                    "Get it instantly",
+                                    style: TextStyle(
+                                      color: Color(0xFFB6B6B6),
+                                      fontFamily: "Inter",
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            } else {
+                              return Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 14,
+                                ),
+                                child: GestureDetector(
+                                  onTap: () => Get.to(() => ProductPage(
+                                        controller.beverageData[index - 1],
+                                      )),
+                                  child: GlassMorphicContainer(
+                                    imageFilter: ImageFilter.blur(
+                                        sigmaX: 15, sigmaY: 15),
+                                    height: 180,
+                                    borderRadius: 14,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        top: 20,
+                                        bottom: 20,
+                                        left: 24,
+                                        right: 14,
+                                      ),
+                                      child: NormalSection(
+                                        beverage:
+                                            controller.beverageData[index - 1],
+                                        cartController: cartController,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }
+                          },
+                        );
+                      },
+                    ),
+                    const SizedBox(height: 50)
+                  ],
+                ),
               ),
             ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: GetX<BottomNavController>(builder: (controller) {
-              return BottomNavigationBar(
-                elevation: 0,
-                backgroundColor: const Color(0x00000000),
-                currentIndex: controller.currentIndex.value,
-                showSelectedLabels: false,
-                iconSize: 20,
-                onTap: (value) => controller.currentIndex.value = value,
-                items: [
-                  const BottomNavigationBarItem(
-                    backgroundColor: Color.fromARGB(150, 0, 0, 0),
-                    label: "home",
-                    activeIcon: Icon(
-                      Icons.home_filled,
-                      color: Colors.white,
-                    ),
-                    icon: Icon(
-                      Icons.home_outlined,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const BottomNavigationBarItem(
-                    label: "profile",
-                    icon: Icon(Icons.account_circle_outlined),
-                    activeIcon: Icon(Icons.account_circle),
-                  ),
-                  const BottomNavigationBarItem(
-                    label: "wallet",
-                    icon: Icon(Icons.account_balance_wallet_outlined),
-                    activeIcon: Icon(Icons.account_balance_wallet),
-                  ),
-                  BottomNavigationBarItem(
-                    label: "cart",
-                    icon: controller.cartController.cart.isEmpty
-                        ? const Icon(CupertinoIcons.cart)
-                        : const Icon(CupertinoIcons.cart_badge_plus),
-                    activeIcon: const Icon(CupertinoIcons.cart_fill),
-                  ),
-                  const BottomNavigationBarItem(
-                    label: "notification",
-                    icon: Icon(Icons.messenger_outline),
-                    activeIcon: Icon(Icons.messenger_outlined),
-                  ),
-                ],
-              );
-            }),
-          ),
-        ],
+            const NavBar(),
+          ],
+        ),
       ),
     );
   }
