@@ -1,8 +1,11 @@
-import 'package:coffieapp/controller/beverage.controller.dart';
-import 'package:coffieapp/model/beverages.model.dart';
-import 'package:coffieapp/view/product/components/switch_.product.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'package:coffieapp/controller/beverage.controller.dart';
+
+import 'package:coffieapp/model/beverages.model.dart';
+
+import 'package:coffieapp/view/product/components/switch_.product.dart';
 
 class ChoiceOfMilkSection extends StatefulWidget {
   const ChoiceOfMilkSection({super.key});
@@ -42,16 +45,12 @@ class _ChoiceOfMilkSectionState extends State<ChoiceOfMilkSection> {
   Widget build(BuildContext context) {
     return GridView.count(
       primary: false,
-      // padding: const EdgeInsets.all(20),
       crossAxisSpacing: 0,
       mainAxisSpacing: 0,
       crossAxisCount: 2,
       shrinkWrap: true,
       childAspectRatio: 4 / 1,
-      // physics: const NeverScrollableScrollPhysics(),
-      children:
-          // const ChoiceSwitch(text: "Skim Milk"),
-          ((ChoiceOfMilk.values).map(
+      children: ((ChoiceOfMilk.values).map(
         (milk) => ChoiceSwitch(
           text: convertEnumToString(milk),
           controller: Get.find<BeverageController>(),

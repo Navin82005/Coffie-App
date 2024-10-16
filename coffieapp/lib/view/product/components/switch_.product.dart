@@ -1,6 +1,7 @@
-import 'package:coffieapp/controller/beverage.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_switch/flutter_advanced_switch.dart';
+
+import 'package:coffieapp/controller/beverage.controller.dart';
 
 class ChoiceSwitch extends StatefulWidget {
   final String text;

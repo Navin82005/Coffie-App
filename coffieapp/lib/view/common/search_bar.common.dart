@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class UiSearchBar extends StatelessWidget {
   final Widget? prefixIcon;
@@ -41,32 +42,39 @@ class UiSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: Get.width,
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: borderRadius,
         border: border,
       ),
-      child: TextField(
-        style: TextStyle(
-          fontFamily: "Inter",
-          // fontSize: fontSize,
-          fontWeight: fontWeight,
-        ),
-        decoration: InputDecoration(
-          hintText: hintText,
-          contentPadding: contentPadding,
-          hintStyle: TextStyle(
-            fontSize: hintFontSize,
-            color: hintColor,
-            fontFamily: "Inter",
-            fontWeight: fontWeight,
+      child: Row(
+        children: [
+          Image.asset("assets/icons/search.png", height: 18, width: 18),
+          const SizedBox(width: 16),
+          Expanded(
+            child: TextField(
+              style: TextStyle(
+                fontFamily: "Inter",
+                fontWeight: fontWeight,
+              ),
+              decoration: InputDecoration(
+                hintText: hintText,
+                contentPadding: contentPadding,
+                hintStyle: TextStyle(
+                  fontSize: hintFontSize,
+                  color: hintColor,
+                  fontFamily: "Inter",
+                  fontWeight: fontWeight,
+                ),
+                border: InputBorder.none,
+              ),
+            ),
           ),
-          prefixIcon: prefixIcon,
-          suffixIcon: suffixIcon,
-          border: InputBorder.none,
-        ),
+          const SizedBox(width: 16),
+          Image.asset("assets/icons/filter.png", height: 18, width: 18),
+        ],
       ),
     );
   }

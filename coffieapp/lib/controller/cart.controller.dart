@@ -1,5 +1,6 @@
-import 'package:coffieapp/model/beverages.model.dart';
 import 'package:get/get.dart';
+
+import 'package:coffieapp/model/beverages.model.dart';
 
 class CartController extends GetxController {
   var cart = <Beverage>[].obs;

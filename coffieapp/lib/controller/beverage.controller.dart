@@ -1,5 +1,6 @@
-import 'package:coffieapp/model/beverages.model.dart';
 import 'package:get/get.dart';
+
+import 'package:coffieapp/model/beverages.model.dart';
 
 class BeverageController extends GetxController {
   var isLoading = false.obs;
@@ -49,14 +50,6 @@ class BeverageController extends GetxController {
             "Caffè latte is a milk coffee that is a made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.",
         oneLiner: "Espresso, Steamed Milk",
         rating: "4.7|458",
-        imagePath: "assets/images/cappuccino_1.png",
-        isVeg: true,
-      ),
-      Beverage(
-        name: "Hot Cappuccino",
-        description: "",
-        oneLiner: "Espresso, Steamed Milk",
-        rating: "4.9|458",
         imagePath: "assets/images/cappuccino_1.png",
         isVeg: true,
       ),

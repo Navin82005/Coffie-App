@@ -9,7 +9,8 @@ class BackgroundImage extends StatelessWidget {
       left: 0,
       right: 0,
       top: 0,
-      child: Image.asset("assets/images/coffeebeans_bg.jpg", fit: BoxFit.cover),
+      child:
+          Image.asset("assets/images/coffee_beans_bg.jpg", fit: BoxFit.cover),
     );
   }
 }

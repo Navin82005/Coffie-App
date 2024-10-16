@@ -1,7 +1,9 @@
-import 'package:coffieapp/controller/beverage.controller.dart';
-import 'package:coffieapp/model/beverages.model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'package:coffieapp/controller/beverage.controller.dart';
+
+import 'package:coffieapp/model/beverages.model.dart';
 
 class ChoiceOfFilling extends StatelessWidget {
   final Beverage beverage;
@@ -10,8 +12,6 @@ class ChoiceOfFilling extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(BeverageFillingController());
-    // var tmp = Get.put(BeverageController());
-    // tmp.fetchBeverageData();
     return GetX<BeverageFillingController>(builder: (controller) {
       List<Widget> boxes = [];
       for (var cup in ChoiceOfCupFilling.values) {

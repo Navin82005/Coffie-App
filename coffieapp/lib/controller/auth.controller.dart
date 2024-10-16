@@ -1,6 +1,7 @@
-import 'package:coffieapp/view/home/home.views.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'package:coffieapp/view/home/home.views.dart';
 
 class Auth extends GetxController {
   var isLoading = false.obs;
@@ -11,14 +12,13 @@ class Auth extends GetxController {
     isLoading.value = true;
     await Future.delayed(
         const Duration(seconds: 2)); // To simulate the login API call
-    print("${nameFieldController.text} ${passwordFieldController.text}");
     if (nameFieldController.text == "swiftcafeuser@gmail.com" &&
         passwordFieldController.text == "swiftcafeuser@password") {
-      Get.offAll(HomePage());
+      Get.offAll(const HomePage());
     } else {
       Get.snackbar(
-        "Error", "Invalid username or password!",
-        // animationDuration: const Duration(seconds: 2),
+        "Error",
+        "Invalid username or password!",
         duration: const Duration(seconds: 3),
       );
     }

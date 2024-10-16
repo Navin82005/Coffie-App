@@ -8,7 +8,6 @@ class UserData {
 
   set username(String name) => _username = name;
   set date(String date) => _date = date;
-  // set username() => _username;
 
   String get username => _username;
   String get date => _date;

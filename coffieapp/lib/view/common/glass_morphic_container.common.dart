@@ -3,13 +3,14 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class GlassMorphicContainer extends StatelessWidget {
+  final ImageFilter imageFilter;
   final double borderRadius;
   final double height;
   final double width;
-  final Color backgroundColor;
+
   final Border? border;
   final Widget? child;
-  final ImageFilter imageFilter;
+  final Color? backgroundColor;
   final BorderRadius? borderRadiusBorder;
 
   const GlassMorphicContainer({
@@ -17,7 +18,7 @@ class GlassMorphicContainer extends StatelessWidget {
     this.height = double.maxFinite,
     this.width = double.maxFinite,
     this.borderRadius = 0,
-    this.backgroundColor = Colors.transparent,
+    this.backgroundColor,
     this.border,
     this.child,
     required this.imageFilter,
@@ -34,7 +35,7 @@ class GlassMorphicContainer extends StatelessWidget {
           width: width,
           height: height,
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.1),
+            color: backgroundColor ?? Colors.white.withOpacity(0.1),
             borderRadius:
                 borderRadiusBorder ?? BorderRadius.circular(borderRadius),
             border: border,

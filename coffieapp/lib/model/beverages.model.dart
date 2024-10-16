@@ -29,7 +29,7 @@ final choiceOfSugarMap = {
 };
 
 class Beverage {
-  String _id;
+  final String _id;
   String _name;
   String _description;
   String _oneLiner;
@@ -48,7 +48,7 @@ class Beverage {
     required String imagePath,
     required String rating,
     required bool isVeg,
-  })  : _id = Uuid().v4(), // Auto-generate the ID
+  })  : _id = const Uuid().v4(), // Auto-generate the ID
         _name = name,
         _oneLiner = oneLiner,
         _description = description,
