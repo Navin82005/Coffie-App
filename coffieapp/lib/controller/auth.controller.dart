@@ -13,7 +13,7 @@ class Auth extends GetxController {
     await Future.delayed(
         const Duration(seconds: 2)); // To simulate the login API call
     if (nameFieldController.text == "swiftcafeuser@gmail.com" &&
-        passwordFieldController.text == "swiftcafeuser@password") {
+        passwordFieldController.text == "swiftcafeuser@gmail.com") {
       Get.offAll(const HomePage());
     } else {
       Get.snackbar(
